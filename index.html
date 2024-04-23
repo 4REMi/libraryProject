@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="/webfonts/uicons-regular-rounded.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap"
+    />
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div id="myModal" class="modal">
+        <!-- New book modal -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="appTitle"><h1 id="appmainTitle">Add new book</h1></div>
+          <form id="bookForm">
+            <label for="title">Title:</label><br />
+            <input type="text" id="title" name="title" /><br />
+            <label for="author">Author:</label><br />
+            <input type="text" id="author" name="author" /><br />
+            <label for="pubDate">Publication Date:</label><br />
+            <input type="date" id="pubDate" name="pubDate" /><br />
+            <label for="pages">Pages:</label><br />
+            <input type="number" id="pages" name="pages" /><br />
+            <label for="readStatus">Status:</label><br />
+            <div id="readStatus">
+              <input type="radio" id="read" name="readStatus" value="Read." />
+              <label for="read"><span class="iconRead"></span>Read</label><br />
+              <input
+                type="radio"
+                id="notRead"
+                name="readStatus"
+                value="Not Read."
+              />
+              <label for="notRead"
+                ><span class="iconNotRead"></span>Not Read</label
+              ><br />
+            </div>
+
+            <label for="coverImage">Cover Image URL:</label><br />
+            <input type="url" id="coverImage" name="coverImage" /><br />
+
+            <input id="submitBtn" type="submit" value="Submit" />
+          </form>
+        </div>
+      </div>
+
+      <div id="statusModal" class="modal2">
+        <div class="modal-content">
+          <!-- Existing book modal -->
+          <span class="close2">&times;</span>
+          <div class="appTitle"><h1 id="appmainTitle">Add new book</h1></div>
+          <div class="bookDisplayModal">
+            <div class="book" id="1">
+              <div class="bookCoverContainer">
+                <img
+                  src="cover1.jpg"
+                  alt=""
+                  class="bookCoverModal"
+                  id="cover1"
+                />
+              </div>
+
+              <div class="bookDetailContainer">
+                <div class="TitleContainer">
+                  <h1 class="bookTitle"></h1>
+                </div>
+
+                <div class="booksubContainer" id="authorContainer">
+                  <i class="fi fi-rr-user"></i>
+                  <div class="authorName"></div>
+                </div>
+
+                <div class="booksubContainer" id="readOnContainer">
+                  <i class="fi fi-rr-calendar"></i>
+                  <div class="readonDate"></div>
+                </div>
+
+                <div class="booksubContainer" id="pagesContainer">
+                  <i class="fi fi-rr-money-check"></i>
+                  <div class="pages"></div>
+                </div>
+
+                <div class="booksubContainer" id="statusContainer">
+                  <img
+                    src="large-red-circle_1f534.png"
+                    alt=""
+                    class="readStatus"
+                  />
+                  <div class="readStatusText"></div>
+                </div>
+              </div>
+              <!-- Change Status Section -->
+
+              <div class="ChangeStatus">
+                <button class="Switchbtn">Switch Read Status</button>
+              </div>
+
+              <!-- Delete Book Section -->
+
+              <div class="DeleteBook">
+                <button class="Deletebtn">Delete this book!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="adminMenu">
+        <div class="appTitle"><h1 id="appmainTitle">Librar.io</h1></div>
+        <div class="adminMenuBtn">
+          <button class="addBook">
+            Add Book
+            <span class="icon"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="bookDisplayContainer">
+
+      </div>
+    </div>
+
+    <script src="functions.js"></script>
+  </body>
+</html>

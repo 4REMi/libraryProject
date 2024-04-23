@@ -1,0 +1,382 @@
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+
+  .modal-content{
+    border-radius: 17px;
+  }
+
+  input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+  }
+
+  .readStatus2{
+    display: flex;
+    flex-direction: row;
+  }
+
+
+  .bookDisplayModal *{
+    font-size: 16px;
+  }
+
+
+
+
+  input[type="radio"]#notRead:checked + label::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    background-image: url("large-red-circle_1f534.png"); /* Replace with the path to your red icon */
+    background-size: 60% 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  input[type="radio"]#notRead + label::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    background-size: 60% 60%;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  input[type="radio"]#read:checked + label::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    background-image: url("large-green-circle_1f7e2.png"); /* Replace with the path to your red icon */
+    background-size: 60% 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  input[type="radio"]#read + label::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    background-size: 60% 60%;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+
+
+  input, select{
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(208, 208, 208);
+    color: black;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+
+
+  }
+
+
+
+  #submitBtn{
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(208, 208, 208);
+    color: black;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    text-align: center;
+
+  }
+
+  #submitBtn:hover{
+    background-color: rgb(246, 246, 246);
+    box-shadow: 0px 2px 4px rgba(55, 0, 255, 0.1);
+    transition: background-color 0.2s ease;
+
+  }
+
+.bookCoverModal{
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 17px;
+}
+
+
+
+  /* The Modal Background for Add Book (background) */
+.modal {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal2 {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 25px;
+    border: 1px solid #888;
+    width: 20%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close,.close2 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus,.close2:hover,.close2:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style the form fields */
+.modal-content input[type=text],
+.modal-content input[type=date],
+.modal-content input[type=number],
+.modal-content input[type=url],
+.modal-content select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Style the submit button */
+.modal-content input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.modal-content input[type=submit]:hover {
+    opacity: 0.8;
+}
+
+
+  .mainContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .TitleContainer>*{
+    font-weight: 500;
+  }
+
+  .bookDisplayContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+.bookCover {
+    border-radius: 16px;
+    width: 180px;
+}
+
+.adminMenu {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 70px;
+    padding-right: 70px;
+
+}
+ .adminMenuBtn {
+    margin: 0;
+    text-align: center;
+    
+
+}
+
+.adminMenuBtn>*:hover{
+    background-color: rgb(246, 246, 246);
+    box-shadow: 0px 2px 4px rgba(55, 0, 255, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+
+#appmainTitle{
+    font-weight: 900;
+}
+
+
+.booksubContainer{
+    display: flex;
+    gap: 13px;
+    font-size: 13px;
+    max-width: fit-content;
+    color: rgb(92, 92, 92);
+}
+
+.readStatus{
+    width: 13px;
+    height: 13px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3px;
+
+}
+
+#readStatus{
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content:center;
+    gap: 40px;
+}
+
+
+.bookTitle{
+font-size: 15px;
+padding: 0;
+letter-spacing: 1px;
+color: rgb(40, 40, 40);
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+max-width: 170px; /* or any other value that suits your design */
+}
+
+.addBook{
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(208, 208, 208);
+    max-width: fit-content;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    text-align: center;
+}
+
+.Switchbtn{
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(208, 208, 208);
+    padding: 16px;
+    border-radius: 16px;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+
+}
+
+.Switchbtn:hover{
+    background-color: rgb(246, 246, 246);
+    box-shadow: 0px 2px 4px rgba(55, 0, 255, 0.1);
+    transition: background-color 0.2s ease;
+
+
+}
+
+.Deletebtn{
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(208, 208, 208);
+    padding: 16px;
+    border-radius: 16px;
+    background-color: rgb(255, 83, 83);
+    color: white;
+    font-weight: 500;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+.Deletebtn:hover{
+    background-color: rgb(232, 57, 57);
+    box-shadow: 0px 2px 4px rgba(55, 0, 255, 0.1);
+    transition: background-color 0.2s ease;
+
+
+}
+.ChangeStatus{
+    max-width: 100%;
+
+}
+
+.bookDisplay{
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(208, 208, 208);
+    max-width: fit-content;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: background-color 0.2s ease;
+
+}
+
+.bookDisplay:hover{
+    background-color: rgb(246, 246, 246);
+    box-shadow: 0px 2px 4px rgba(55, 0, 255, 0.1);
+
+}
+
+.bookDetailContainer{
+    max-width: fit-content;
+}
